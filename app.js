@@ -3,6 +3,7 @@ const gallery = document.querySelector(".gallery");
 const searchInput = document.querySelector(".search-input");
 const form = document.querySelector(".search-form");
 let searchValue;
+const more = document.querySelector(".more");
 let fetchLink;
 
 searchInput.addEventListener("input", updateInput);
@@ -10,6 +11,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   searchPhotos(searchValue);
 });
+more.addEventListener("click", loadMore);
 
 function updateInput(e) {
   searchValue = e.target.value;
@@ -61,5 +63,7 @@ function clear() {
   gallery.innerHTML = "";
   searchInput.value = "";
 }
+
+async function loadmore()
 
 curatedPhotos();
